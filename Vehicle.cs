@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TDD_ASS2
 {
-    class Vehicle
+    public class Vehicle
     {
         private string manufacturer;
         private string model;
@@ -20,6 +20,43 @@ namespace TDD_ASS2
 
         private FuelPurchase fuelPurchase;
 
+        public string Manufacturer
+        {
+            get { return manufacturer; }
+            set { manufacturer = value; }
+        }
+
+        public int MakeYear
+        {
+            get { return makeYear; }
+            set { makeYear = value; }
+        }
+
+        public int RegistrationNum
+        {
+            get { return registrationNum; }
+            set { registrationNum = value; }
+        }
+
+        public int OdometerReading
+        {
+            get { return odometerReading; }
+            set { odometerReading = value; }
+        }
+
+        public int TankCapacity
+        {
+            get { return tankCapacity; }
+            set { tankCapacity = value; }
+        }
+
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
+        }
+
+
         /**
          * Class constructor specifying name of make (manufacturer), model and year
          * of make.
@@ -27,17 +64,19 @@ namespace TDD_ASS2
          * @param model
          * @param makeYear
          */
-        public Vehicle(String manufacturer, String model, int makeYear, int registrationNum,int odometerReading, int tankCapacity)
-        {
-            this.manufacturer = manufacturer;
-            this.model = model;
-            this.makeYear = makeYear;
-            this.registrationNum = registrationNum;
-            this.odometerReading = odometerReading;
-            this.tankCapacity = tankCapacity;
 
-            fuelPurchase = new FuelPurchase();
-        }
+        //public Vehicle(String manufacturer, String model, int makeYear, int registrationNum,int odometerReading, int tankCapacity)
+        //{
+        //    this.manufacturer = manufacturer;
+        //    this.model = model;
+        //    this.makeYear = makeYear;
+        //    this.registrationNum = registrationNum;
+        //    this.odometerReading = odometerReading;
+        //    this.tankCapacity = tankCapacity;
+
+        //    fuelPurchase = new FuelPurchase();
+        //}
+
 
         // TODO Add missing getter and setter methods
 
@@ -47,7 +86,7 @@ namespace TDD_ASS2
         public void printDetails()
         {
             Console.WriteLine("Vehicle: " + makeYear + " " + manufacturer + " " + model + " " + registrationNum + " " +
-              + odometerReading + " " + tankCapacity);
+              +odometerReading + " " + tankCapacity);
             // TODO Display additional information about this vehicle
         }
 
@@ -57,7 +96,7 @@ namespace TDD_ASS2
         public int addKilometers(int distanceTraveled)
         {
             odometerReading += distanceTraveled;
-            return odometerReading; 
+            return odometerReading;
         }
 
         // adds fuel to the car
