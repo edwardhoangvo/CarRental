@@ -20,10 +20,26 @@ namespace TDD_ASS2
 
         private FuelPurchase fuelPurchase;
 
+        public Vehicle()
+        {
+            Manufacturer = "";
+            Model = "";
+            MakeYear = 0;
+            RegistrationNum = 0;
+            OdometerReading = 0;
+            TankCapacity = 0;
+        }
+
         public string Manufacturer
         {
             get { return manufacturer; }
             set { manufacturer = value; }
+        }
+
+        public string Model
+        {
+            get { return model; }
+            set { model = value; }
         }
 
         public int MakeYear
@@ -50,11 +66,7 @@ namespace TDD_ASS2
             set { tankCapacity = value; }
         }
 
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
+
 
 
         /**
