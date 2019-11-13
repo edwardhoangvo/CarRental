@@ -22,25 +22,29 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn 
-                            Header="Vehicle"
-                            Width="200"
-                            DisplayMemberBinding="{Binding Title}"/>
+                            Header="Manufacturer"
+                            Width="150"
+                            DisplayMemberBinding="{Binding manufacturer}"/>
                     <GridViewColumn 
                             Header="Model"
-                            Width="200"
-                            DisplayMemberBinding="{Binding Type}"/>
+                            Width="150"
+                            DisplayMemberBinding="{Binding model}"/>
                     <GridViewColumn
-                            Header="Last Service"
-                            Width="135"
-                            DisplayMemberBinding="{Binding Player}"/>
+                            Header="Release Year"
+                            Width="90"
+                            DisplayMemberBinding="{Binding makeYear}"/>
                     <GridViewColumn 
-                            Header="Jouney"
+                            Header="Registration Number"
                             Width="135"
-                            DisplayMemberBinding="{Binding Age}"/>
+                            DisplayMemberBinding="{Binding registrationNum}"/>
                     <GridViewColumn 
-                            Header="Fuel Purchased "
-                            Width="100"
-                            DisplayMemberBinding="{Binding Price}"/>
+                            Header="Odometer Reading"
+                            Width="135"
+                            DisplayMemberBinding="{Binding odometerReading}"/>
+                    <GridViewColumn 
+                            Header="Tank Capacity"
+                            Width="110"
+                            DisplayMemberBinding="{Binding tankCapacity}"/>
                 </GridView>
             </ListView.View>
         </ListView>
