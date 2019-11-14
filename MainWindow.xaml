@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TDD_ASS2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="970">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -17,40 +17,58 @@
         <TextBox Grid.Row="0" Margin="10,10,200,10"/>
         <Button x:Name="SearchButton" Grid.Row="0" Margin="610,10,100,10" Content="Search" />
 
-        <ListView Grid.Row="1" 
-                  Margin="10">
+        <ListView Grid.Row="1"
+                  Margin="10"
+                  Name="VehicleList">
             <ListView.View>
                 <GridView>
                     <GridViewColumn 
+                            Header="ID"
+                            Width="20"
+                            DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn 
                             Header="Manufacturer"
                             Width="150"
-                            DisplayMemberBinding="{Binding manufacturer}"/>
+                            DisplayMemberBinding="{Binding Manufacturer}"/>
                     <GridViewColumn 
                             Header="Model"
-                            Width="150"
-                            DisplayMemberBinding="{Binding model}"/>
+                            Width="130"
+                            DisplayMemberBinding="{Binding Model}"/>
                     <GridViewColumn
                             Header="Release Year"
                             Width="90"
-                            DisplayMemberBinding="{Binding makeYear}"/>
+                            DisplayMemberBinding="{Binding MakeYear}"/>
                     <GridViewColumn 
                             Header="Registration Number"
                             Width="135"
-                            DisplayMemberBinding="{Binding registrationNum}"/>
+                            DisplayMemberBinding="{Binding RegistrationNum}"/>
                     <GridViewColumn 
                             Header="Odometer Reading"
                             Width="135"
-                            DisplayMemberBinding="{Binding odometerReading}"/>
+                            DisplayMemberBinding="{Binding OdometerReading}"/>
                     <GridViewColumn 
                             Header="Tank Capacity"
-                            Width="110"
-                            DisplayMemberBinding="{Binding tankCapacity}"/>
+                            Width="100"
+                            DisplayMemberBinding="{Binding TankCapacity}"/>
+                    <GridViewColumn 
+                            Header="Last Service"
+                            Width="80"
+                            DisplayMemberBinding="{Binding LastServiceOdometerKM}"/>
+                    <GridViewColumn 
+                            Header="Count"
+                            Width="50"
+                            DisplayMemberBinding="{Binding ServiceCount}"/>
+                    <GridViewColumn 
+                            Header="Journey"
+                            Width="50"
+                            DisplayMemberBinding="{Binding Journey}"/>
                 </GridView>
             </ListView.View>
         </ListView>
 
-        <Button x:Name="AddButton" Grid.Row="2" Margin="10,10,700,10" Grid.RowSpan="2" Content="Add" Click="AddButton_Click"/>
-        <Button x:Name="EdditButton" Grid.Row="2" Margin="100,10,600,10" Grid.RowSpan="2" Content="Edit" Click="EdditButton_Click"/>
-        <Button x:Name="DeleteButton" Grid.Row="2" Margin="200,10,500,10" Content="Delete"/>
+        <Button x:Name="AddButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.RowSpan="2" Content="Add" Click="AddButton_Click"/>
+        <Button x:Name="EdditButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="100,10,0,10" Grid.RowSpan="2" Content="Edit"/>
+        <Button x:Name="DeleteButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="200,10,0,10" Content="Delete" Click="DeleteButton_Click"/>
+        <Button x:Name="ViewButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="300,10,0,10" Content="View Details"/>
     </Grid>
 </Window>
