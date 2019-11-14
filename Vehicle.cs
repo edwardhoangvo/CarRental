@@ -8,6 +8,7 @@ namespace TDD_ASS2
 {
     public class Vehicle
     {
+        private int id;
         private string manufacturer;
         private string model;
         private int makeYear;
@@ -18,16 +19,32 @@ namespace TDD_ASS2
         // TODO add variable for TankCapacity (in litres)
         private int tankCapacity;
 
+        private double journey;
+
+
+        private decimal lastServiceOdometerKm;
+        private int serviceCount;
+
         private FuelPurchase fuelPurchase;
 
         public Vehicle()
         {
+            ID = 0;
             Manufacturer = "";
             Model = "";
             MakeYear = 0;
             RegistrationNum = 0;
             OdometerReading = 0;
             TankCapacity = 0;
+            LastServiceOdometerKm = 0;
+            ServiceCount = 0;
+            journey = 0;
+        }
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         public string Manufacturer
@@ -66,7 +83,23 @@ namespace TDD_ASS2
             set { tankCapacity = value; }
         }
 
+        public decimal LastServiceOdometerKm
+        {
+            get { return lastServiceOdometerKm; }
+            set { lastServiceOdometerKm = value; }
+        }
 
+        public int ServiceCount
+        {
+            get { return serviceCount; }
+            set { serviceCount = value; }
+        }
+
+        public double Journey
+        {
+            get { return journey; }
+            set { journey = value; }
+        }
 
 
         /**
