@@ -30,6 +30,11 @@ namespace TDD_ASS2
             get;
             set;
         }
+        public int ID
+        {
+            get { return VehicleInfo.ID; }
+            set { VehicleInfo.ID = value; }
+        }
 
         public string Manufacturer
         {
@@ -66,23 +71,52 @@ namespace TDD_ASS2
             get { return VehicleInfo.Model; }
             set { VehicleInfo.Model = value; }
         }
+        
+
+        public decimal LastServiceOdometerKM
+        {
+            get { return VehicleInfo.LastServiceOdometerKm; }
+            set { VehicleInfo.LastServiceOdometerKm = value; }
+        }
+
+        public int ServiceCount
+        {
+            get { return VehicleInfo.ServiceCount; }
+            set { VehicleInfo.ServiceCount = value; }
+        }
+        public double Journey
+        {
+            get { return VehicleInfo.Journey; }
+            set { VehicleInfo.Journey = value; }
+        }
+
+
+
 
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-         
 
+         
             int year = int.Parse(YearTB.Text);
             int num = int.Parse(NumTB.Text);
             int odo = int.Parse(OdoTB.Text);
             int tank = int.Parse(TankTB.Text);
+            decimal service = decimal.Parse(ServiceTB.Text);
+            double jour = double.Parse(JourneyTB.Text);
 
+            ID = 0;
             Manufacturer = ManuTB.Text;
             Model = ModelTB.Text;
             MakeYear = year;
             RegistrationNum = num;
             OdometerReading = odo;
             TankCapacity = tank;
+
+            LastServiceOdometerKM = service;
+            ServiceCount++;
+
+            Journey = jour;
 
             this.Visibility = Visibility.Hidden;
         }
