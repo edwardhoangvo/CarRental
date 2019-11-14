@@ -25,13 +25,20 @@ namespace TDD_ASS2
         //xxxxxxxx
 
         ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
+        //ObservableCollection<Service> services = new ObservableCollection<Service>();
+
         public Vehicle xVehicle;
+        //public Service xService;
+
+        //Service[] serviceList = new Service[30]; 
 
         public MainWindow()
         {
             InitializeComponent();
 
             xVehicle = new Vehicle();
+            //xService = new Service();
+
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -44,8 +51,12 @@ namespace TDD_ASS2
             xVehicle.RegistrationNum = 0;
             xVehicle.OdometerReading = 0;
             xVehicle.TankCapacity = 0;
+            xVehicle.LastServiceOdometerKm = 0;
+            
 
             enterDetails.VehicleInfo = xVehicle;
+
+            //enterDetails.ServiceInfo = xService;
 
             enterDetails.Owner = this;
 
@@ -58,16 +69,28 @@ namespace TDD_ASS2
             enterDetails.Close();
 
             vehicles.Add(new Vehicle() {
+                //ID = vehicles
                 Manufacturer = xVehicle.Manufacturer,
                 Model = xVehicle.Model,
-                MakeYear =  xVehicle.MakeYear,
+                MakeYear = xVehicle.MakeYear,
                 RegistrationNum = xVehicle.RegistrationNum,
                 OdometerReading = xVehicle.OdometerReading,
-                TankCapacity = xVehicle.TankCapacity });
+                TankCapacity = xVehicle.TankCapacity,
+                LastServiceOdometerKm = xVehicle.LastServiceOdometerKm,
+                ServiceCount = xVehicle.ServiceCount,
+                Journey = xVehicle.Journey
+                });
+
+            
 
             VehicleList.ItemsSource = vehicles;
          
         }
 
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+        }
     }
 }
