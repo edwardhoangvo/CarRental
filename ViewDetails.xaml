@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TDD_ASS2"
         mc:Ignorable="d"
-        Title="ViewDetails" Height="450" Width="800" Loaded="ViewDetailsWindow_Loaded">
+        Name="ViewDetailsWindow" Loaded="ViewDetailsWindow_Loaded" Title="ViewDetails" Height="450" Width="800">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>

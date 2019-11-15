@@ -19,40 +19,40 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Content="Manufacturer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="0"/>
+        <Label Content="Manufacturer *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="0"/>
         <TextBox Name="ManuTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="0" Width="350" />
 
-        <Label Content="Model" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="0"/>
+        <Label Content="Model *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="0"/>
         <TextBox Name="ModelTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="0" Width="350" />
 
-        <Label Content="Release Year" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="1"/>
+        <Label Content="Release Year *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="1"/>
         <TextBox Name="YearTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="1" Width="350" />
 
-        <Label Content="Registration Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Registration Number *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="1"/>
         <TextBox Name="NumTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="1" Width="350" />
 
-        <Label Content="Odometer Reading" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="2"/>
+        <Label Content="Odometer Reading *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="2"/>
         <TextBox Name="OdoTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="2" Width="350" />
 
-        <Label Content="Tank Capacity" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="2"/>
+        <Label Content="Tank Capacity *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="2"/>
         <TextBox Name="TankTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="2" Width="350" />
 
-        <Label Content="Last Service Kilometer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="3"/>
+        <Label Content="Last Service Kilometer *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="3"/>
         <TextBox Name="ServiceTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="3" Width="350" />
         <Label Content="Services:" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" Grid.Column="0" Grid.Row="3"/>
         <TextBlock Name="ServiceBlock" Text="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,5" Grid.Column="0" Grid.Row="3" />
 
-        <Label Content="Journey (km)" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="3"/>
+        <Label Content="Journey (km) *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="3"/>
         <TextBox Name="JourneyTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="3" Width="350" />
 
 
-        <Label Content="Purchased Fuel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="4"/>
+        <Label Content="Purchased Fuel *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="4"/>
         <TextBox Name="PurTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="4" Width="350" />
 
-        <Label Content="Fuel Cost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="4"/>
+        <Label Content="Fuel Cost *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="4"/>
         <TextBox Name="FuelTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="4" Width="350" />
 
         <Button Name="SaveButton" Content="Save" Width="80" Height="30"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Column="0" Grid.Row="5" Click="SaveButton_Click" />
-        <Button Name="CancelButton" Content="Cancel"  Width="80" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Column="1" Grid.Row="5" />
+        <Button Name="CancelButton" Content="Cancel"  Width="80" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Column="1" Grid.Row="5" Click="CancelButton_Click" />
     </Grid>
 </Window>

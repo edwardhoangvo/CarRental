@@ -113,11 +113,15 @@ namespace TDD_ASS2
             OdometerReading = odo;
             TankCapacity = tank;
 
-            LastServiceOdometerKM = service;
-            
+            LastServiceOdometerKM = service;            
 
             Journey = jour;
 
+            this.Visibility = Visibility.Hidden;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
             this.Visibility = Visibility.Hidden;
         }
     }

@@ -109,7 +109,7 @@ namespace TDD_ASS2
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Visibility = Visibility.Hidden;
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -198,6 +198,11 @@ namespace TDD_ASS2
             Journey = VehicleInfo.addKilometersJourney(journey);
 
             JourneyTB.Text = VehicleInfo.OdometerReading.ToString();
+
+        }
+
+        private void ViewDetailsWindow_Loaded_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }
