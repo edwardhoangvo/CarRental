@@ -22,12 +22,15 @@ namespace TDD_ASS2
     public partial class MainWindow : Window
     {
 
-        //xxxxxxxx
+        //XXXXXX
 
         ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
         //ObservableCollection<Service> services = new ObservableCollection<Service>();
+        int vehicleCount = 0;
+
 
         public Vehicle xVehicle;
+        public Vehicle updatedVehicle;
         //public Service xService;
 
         //Service[] serviceList = new Service[30]; 
@@ -69,7 +72,7 @@ namespace TDD_ASS2
             enterDetails.Close();
 
             vehicles.Add(new Vehicle() {
-                //ID = vehicles
+                ID = vehicleCount,
                 Manufacturer = xVehicle.Manufacturer,
                 Model = xVehicle.Model,
                 MakeYear = xVehicle.MakeYear,
@@ -81,8 +84,8 @@ namespace TDD_ASS2
                 Journey = xVehicle.Journey
                 });
 
-            
-            
+
+            vehicleCount++;
 
             VehicleList.ItemsSource = vehicles;
          
@@ -92,6 +95,64 @@ namespace TDD_ASS2
         {
             
             
+        }
+
+        private void EdditButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewDetails details = new ViewDetails();
+
+            int selectedItemIndex = VehicleList.SelectedIndex;
+
+
+            details.VehicleInfo = this.vehicles[selectedItemIndex];
+
+
+
+            details.Owner = this;
+
+            details.WindowStartupLocation = WindowStartupLocation.Manual;
+
+            details.Left = details.Owner.Left + details.Owner.Width - details.Width;
+
+            details.Top = details.Owner.Top;
+
+            details.ShowDialog();
+
+            this.updatedVehicle = details.VehicleInfo;
+
+            for (int i = 0; i < vehicleCount; i++)
+            {
+                if (vehicles[i].ID == selectedItemIndex)
+                {
+                    vehicles[i] = this.updatedVehicle;
+
+                }
+            }
+
+            //foreach (Vehicle eachItem in VehicleList.SelectedItems)
+            //{
+            //    VehicleList.Items.Remove(eachItem);
+            //}
+
+
+
+            //vehicles.Add(new Vehicle()
+            //{
+            //    //ID = vehicleCount,
+            //    Manufacturer = updatedVehicle.Manufacturer,
+            //    Model = updatedVehicle.Model,
+            //    MakeYear = updatedVehicle.MakeYear,
+            //    RegistrationNum = updatedVehicle.RegistrationNum,
+            //    OdometerReading = updatedVehicle.OdometerReading,
+            //    TankCapacity = updatedVehicle.TankCapacity,
+            //    LastServiceOdometerKm = updatedVehicle.LastServiceOdometerKm,
+            //    ServiceCount = updatedVehicle.ServiceCount,
+            //    Journey = updatedVehicle.Journey
+            //});
+
+            VehicleList.ItemsSource = vehicles;
+
+
         }
     }
 }
