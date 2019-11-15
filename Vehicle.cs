@@ -217,8 +217,8 @@ namespace TDD_ASS2
         // and adds it to the odometer reading. 
         public int addKilometers(int distanceTraveled)
         {
-            odometerReading += distanceTraveled;
-            return odometerReading;
+            OdometerReading += distanceTraveled;
+            return OdometerReading;
         }
 
         // adds fuel to the car
@@ -227,5 +227,30 @@ namespace TDD_ASS2
             fuelPurchase.purchaseFuel(litres, price);
         }
 
+
+
+
+        public decimal recordService(decimal distance)
+        {
+            this.serviceCount++;
+            return lastServiceOdometerKm = distance;
+        }
+
+        // return how many services the car has had
+        public int getServiceCount()
+        {
+            return this.serviceCount;
+        }
+
+        /**
+         * Calculates the total services by dividing kilometers by
+         * {@link #SERVICE_KILOMETER_LIMIT} and floors the value. 
+         * 
+         * @return the number of services needed per SERVICE_KILOMETER_LIMIT
+         */
+        public int getTotalScheduledServices()
+        {
+            return (int)Math.Floor(lastServiceOdometerKm / SERVICE_KILOMETER_LIMIT);
+        }
     }
 }
