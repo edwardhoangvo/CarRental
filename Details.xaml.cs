@@ -114,7 +114,7 @@ namespace TDD_ASS2
             TankCapacity = tank;
 
             LastServiceOdometerKM = service;
-            ServiceCount++;
+            
 
             Journey = jour;
 
