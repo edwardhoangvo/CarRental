@@ -6,19 +6,41 @@ using System.Threading.Tasks;
 
 namespace TDD_ASS2
 {
-    class Service
+    public class Service
     {
         // Constant to indicate that the vehicle needs to be serviced every 10,000km
         public static int SERVICE_KILOMETER_LIMIT = 10000;
 
-        private decimal lastServiceOdometerKm = 0;
-        private int serviceCount = 0;
+        public int vehicleID;
+        private decimal lastServiceOdometerKm;
+        private int serviceCount;
         // TODO add lastServiceDate
 
-        // return the last service
-        public decimal getLastServiceOdometerKm()
+        public Service()
         {
-            return this.lastServiceOdometerKm;
+            LastServiceOdometerKm = 0;
+            ServiceCount = 0;
+
+        }
+        // return the last service
+
+        public int VehicleID
+        {
+            get { return vehicleID; }
+            set { vehicleID = value; }
+        }
+
+
+        public decimal LastServiceOdometerKm
+        {
+            get { return lastServiceOdometerKm; }
+            set { lastServiceOdometerKm = value; }
+        }
+
+        public int ServiceCount
+        {
+            get { return serviceCount; }
+            set { serviceCount = value; }
         }
 
         /**
