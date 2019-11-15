@@ -124,8 +124,7 @@ namespace TDD_ASS2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please Enter all the starred Items \n" + ex.Message);
-
+                MessageBox.Show("Please Enter all the Items \n Error:" + ex.Message);
             }
         }
 

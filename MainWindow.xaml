@@ -13,8 +13,10 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="0" Margin="10,10,200,10"/>
-        <Button x:Name="SearchButton" Grid.Row="0" Margin="770,10,100,10" Content="Search" />
+        <Label Content="Vehicle Rental Managemant System"
+               FontSize="30"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
 
         <ListView Grid.Row="1"
                   Margin="10"

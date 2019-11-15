@@ -86,40 +86,54 @@ namespace TDD_ASS2
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            int selectedItemIndex = VehicleList.SelectedIndex;
+            try
+            {
+                int selectedItemIndex = VehicleList.SelectedIndex;
 
-            RemoveItem(vehicles, vehicles[selectedItemIndex]);           
+                RemoveItem(vehicles, vehicles[selectedItemIndex]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Select a vehicle to Delete\n Error:" + ex.Message);
+            }
         }
 
         private void EdditButton_Click(object sender, RoutedEventArgs e)
-        {           
-            ViewDetails details = new ViewDetails();
-
-            int selectedItemIndex = VehicleList.SelectedIndex;
-
-            details.VehicleInfo = this.vehicles[selectedItemIndex];
-
-            details.Owner = this;
-
-            details.WindowStartupLocation = WindowStartupLocation.Manual;
-
-            details.Left = details.Owner.Left + details.Owner.Width - details.Width;
-
-            details.Top = details.Owner.Top;
-
-            details.ShowDialog();
-
-            this.updatedVehicle = details.VehicleInfo;
-
-            for (int i = 0; i < vehicleCount; i++)
+        {
+            try
             {
-                if (vehicles[i].ID == selectedItemIndex)
-                {
-                    vehicles[i] = this.updatedVehicle;
-                }
-            }
+                ViewDetails details = new ViewDetails();
 
-            VehicleList.ItemsSource = vehicles;
+                int selectedItemIndex = VehicleList.SelectedIndex;
+
+                details.VehicleInfo = this.vehicles[selectedItemIndex];
+
+                details.Owner = this;
+
+                details.WindowStartupLocation = WindowStartupLocation.Manual;
+
+                details.Left = details.Owner.Left + details.Owner.Width - details.Width;
+
+                details.Top = details.Owner.Top;
+
+                details.ShowDialog();
+
+                this.updatedVehicle = details.VehicleInfo;
+
+                for (int i = 0; i < vehicleCount; i++)
+                {
+                    if (vehicles[i].ID == selectedItemIndex)
+                    {
+                        vehicles[i] = this.updatedVehicle;
+                    }
+                }
+
+                VehicleList.ItemsSource = vehicles;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Select a vehicle to Edit\n Error:" + ex.Message);
+            }
         }
     }
 }
