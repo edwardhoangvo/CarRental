@@ -252,5 +252,25 @@ namespace TDD_ASS2
         {
             return (int)Math.Floor(lastServiceOdometerKm / SERVICE_KILOMETER_LIMIT);
         }
+
+        /** 
+         * Appends the distance parameter to {@link #kilometers}
+         * @param kilometers the distance traveled 
+         */
+        public void addKilometers(double journey)
+        {
+            this.journey += journey;
+        }
+
+
+
+        /**
+         * Getter method for total Kilometers traveled in this journey.
+         * @return {@link #kilometers}
+         */
+        public double getKilometers()
+        {
+            return journey;
+        }
     }
 }
