@@ -21,27 +21,16 @@ namespace TDD_ASS2
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        //XXXXXX
-
         ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
-        //ObservableCollection<Service> services = new ObservableCollection<Service>();
         int vehicleCount = 0;
-
-
         public Vehicle xVehicle;
         public Vehicle updatedVehicle;
-        //public Service xService;
-
-        //Service[] serviceList = new Service[30]; 
 
         public MainWindow()
         {
             InitializeComponent();
 
             xVehicle = new Vehicle();
-            //xService = new Service();
-
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -56,10 +45,7 @@ namespace TDD_ASS2
             xVehicle.TankCapacity = 0;
             xVehicle.LastServiceOdometerKm = 0;
             
-
             enterDetails.VehicleInfo = xVehicle;
-
-            //enterDetails.ServiceInfo = xService;
 
             enterDetails.Owner = this;
 
@@ -87,13 +73,10 @@ namespace TDD_ASS2
                     Journey = xVehicle.Journey
                 });
 
-
                 vehicleCount++;
             }
 
             VehicleList.ItemsSource = vehicles;
-
-
         }
 
         public void RemoveItem(ObservableCollection<Vehicle> collection, Vehicle instance)
@@ -105,22 +88,16 @@ namespace TDD_ASS2
         {
             int selectedItemIndex = VehicleList.SelectedIndex;
 
-            RemoveItem(vehicles, vehicles[selectedItemIndex]);
-            
+            RemoveItem(vehicles, vehicles[selectedItemIndex]);           
         }
 
         private void EdditButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            
+        {           
             ViewDetails details = new ViewDetails();
 
             int selectedItemIndex = VehicleList.SelectedIndex;
 
-
             details.VehicleInfo = this.vehicles[selectedItemIndex];
-
-
 
             details.Owner = this;
 
@@ -139,13 +116,10 @@ namespace TDD_ASS2
                 if (vehicles[i].ID == selectedItemIndex)
                 {
                     vehicles[i] = this.updatedVehicle;
-
                 }
             }
 
             VehicleList.ItemsSource = vehicles;
-
-
         }
     }
 }

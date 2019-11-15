@@ -14,34 +14,6 @@ namespace TDD_ASS2
         public int vehicleID;
         private decimal lastServiceOdometerKm;
         private int serviceCount;
-        // TODO add lastServiceDate
-
-        public Service()
-        {
-            LastServiceOdometerKm = 0;
-            ServiceCount = 0;
-
-        }
-        // return the last service
-
-        public int VehicleID
-        {
-            get { return vehicleID; }
-            set { vehicleID = value; }
-        }
-
-
-        public decimal LastServiceOdometerKm
-        {
-            get { return lastServiceOdometerKm; }
-            set { lastServiceOdometerKm = value; }
-        }
-
-        public int ServiceCount
-        {
-            get { return serviceCount; }
-            set { serviceCount = value; }
-        }
 
         /**
          * The function recordService expects the total distance traveled by the car, 

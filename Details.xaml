@@ -18,6 +18,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Label Content="Manufacturer *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="0" Grid.Row="0"/>
         <TextBox Name="ManuTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="0" Grid.Row="0" Width="350" />
 
@@ -43,8 +44,6 @@
 
         <Label Content="Journey (km) *" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Grid.Column="1" Grid.Row="3"/>
         <TextBox Name="JourneyTB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="1" Grid.Row="3" Width="350" />
-
-
         
         <Button Name="SaveButton" Content="Save" Width="80" Height="30"  HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Column="0" Grid.Row="5" Click="SaveButton_Click" />
         <Button Name="CancelButton" Content="Cancel"  Width="80" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,10,0" Grid.Column="1" Grid.Row="5" Click="CancelButton_Click" />

@@ -8,7 +8,6 @@ namespace TDD_ASS2
 {
     class Journey
     {
-
         private double kilometers;
 
         /**
@@ -27,8 +26,6 @@ namespace TDD_ASS2
         {
             this.kilometers += kilometers;
         }
-
-
 
         /**
          * Getter method for total Kilometers traveled in this journey.

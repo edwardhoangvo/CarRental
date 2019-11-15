@@ -74,7 +74,6 @@ namespace TDD_ASS2
             set { VehicleInfo.Model = value; }
         }
 
-
         public decimal LastServiceOdometerKM
         {
             get { return VehicleInfo.LastServiceOdometerKm; }
@@ -91,8 +90,6 @@ namespace TDD_ASS2
             get { return VehicleInfo.Journey; }
             set { VehicleInfo.Journey = value; }
         }
-
-
 
         private void ViewDetailsWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -131,8 +128,6 @@ namespace TDD_ASS2
 
             LastServiceOdometerKM = service;
 
-
-
             Journey = jour;
 
             this.Visibility = Visibility.Hidden;
@@ -158,11 +153,9 @@ namespace TDD_ASS2
         {
             int odo = int.Parse(OdoTB.Text);
        
-
             OdometerReading = VehicleInfo.addKilometersOdo(odo);
 
             OdoTB.Text = OdometerReading.ToString();
-
         }
 
         private void RecordServiceButton_Click(object sender, RoutedEventArgs e)
@@ -187,7 +180,6 @@ namespace TDD_ASS2
             JourneyTB.Visibility = Visibility.Visible;
             RecordJourneyButton.Visibility = Visibility.Hidden;
             AddJourneyButton.Visibility = Visibility.Visible;
-
         }
 
         private void AddJourneyButton_Click(object sender, RoutedEventArgs e)
@@ -197,12 +189,6 @@ namespace TDD_ASS2
             Journey = VehicleInfo.addKilometersJourney(journey);
 
             JourneyTB.Text = VehicleInfo.OdometerReading.ToString();
-
-        }
-
-        private void ViewDetailsWindow_Loaded_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

@@ -26,7 +26,6 @@ namespace TDD_ASS2
             ButtonStatus = true;
         }
 
-
         public Vehicle VehicleInfo
         {
             get;
@@ -97,11 +96,6 @@ namespace TDD_ASS2
             set;
         }
 
-
-
-
-
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -133,16 +127,12 @@ namespace TDD_ASS2
                 MessageBox.Show("Please Enter all the starred Items \n" + ex.Message);
 
             }
-
-
         }
-
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
             ButtonStatus = false;
-
         }
     }
 }

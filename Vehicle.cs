@@ -22,14 +22,9 @@ namespace TDD_ASS2
         private int odometerReading;
         // TODO add variable for TankCapacity (in litres)
         private int tankCapacity;
-
         private double journey;
-
-
         private decimal lastServiceOdometerKm;
         private int serviceCount;
-
-
 
         private FuelPurchase fuelPurchase;
 
@@ -59,9 +54,15 @@ namespace TDD_ASS2
         public int ID
         {
             get { return id; }
-            set { id = value; }
+            set
+            {
+                if (this.id != value)
+                {
+                    this.id = value;
+                    this.NotifyPropertyChanged("ID");
+                }
+            }
         }
-
         public string Manufacturer
         {
             get { return manufacturer; }
@@ -227,9 +228,6 @@ namespace TDD_ASS2
             fuelPurchase.purchaseFuel(litres, price);
         }
 
-
-
-
         public decimal recordService(decimal distance)
         {
             this.serviceCount++;
@@ -262,8 +260,6 @@ namespace TDD_ASS2
             this.journey += journey;
             return journey;
         }
-
-
 
         /**
          * Getter method for total Kilometers traveled in this journey.
