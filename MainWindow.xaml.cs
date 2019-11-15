@@ -82,6 +82,7 @@ namespace TDD_ASS2
                 });
 
             
+            
 
             VehicleList.ItemsSource = vehicles;
          
