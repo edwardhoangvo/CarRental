@@ -68,6 +68,6 @@
 
         <Button x:Name="AddButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.RowSpan="2" Content="Add" Click="AddButton_Click"/>
         <Button x:Name="EdditButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="120,0,0,10" Content="Edit" Height="30" VerticalAlignment="Bottom" Click="EdditButton_Click"/>
-        <Button x:Name="DeleteButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="230,10,0,10" Content="Delete" Click="DeleteButton_Click"/>
+        <Button x:Name="DeleteButton" Grid.Row="2" Width="100" HorizontalAlignment="Left" Margin="230,10,0,0" Content="Delete" Click="DeleteButton_Click" Height="30" VerticalAlignment="Top"/>
     </Grid>
 </Window>

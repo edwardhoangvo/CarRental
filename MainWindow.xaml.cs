@@ -91,9 +91,16 @@ namespace TDD_ASS2
          
         }
 
+        public void RemoveItem(ObservableCollection<Vehicle> collection, Vehicle instance)
+        {
+            collection.Remove(collection.Where(i => i.ID == instance.ID).Single());
+        }
+
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            int selectedItemIndex = VehicleList.SelectedIndex;
+
+            RemoveItem(vehicles, vehicles[selectedItemIndex]);
             
         }
 
