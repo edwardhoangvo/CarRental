@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TDD_ASS2
 {
-    public class Vehicle
+    public class Vehicle : INotifyPropertyChanged
     {
         public static int SERVICE_KILOMETER_LIMIT = 10000;
 
@@ -215,7 +215,7 @@ namespace TDD_ASS2
 
         // TODO Create an addKilometers method which takes a parameter for distance travelled 
         // and adds it to the odometer reading. 
-        public int addKilometers(int distanceTraveled)
+        public int addKilometersOdo(int distanceTraveled)
         {
             OdometerReading += distanceTraveled;
             return OdometerReading;
@@ -257,9 +257,10 @@ namespace TDD_ASS2
          * Appends the distance parameter to {@link #kilometers}
          * @param kilometers the distance traveled 
          */
-        public void addKilometers(double journey)
+        public double addKilometersJourney(double journey)
         {
             this.journey += journey;
+            return journey;
         }
 
 
