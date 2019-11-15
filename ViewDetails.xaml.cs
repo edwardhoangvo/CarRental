@@ -152,23 +152,25 @@ namespace TDD_ASS2
         {
             OdoTB.Visibility = Visibility.Visible;
             AddKiloButton.Visibility = Visibility.Visible;
+            AddKiloToOdoButton.Visibility = Visibility.Hidden;
         }
 
         private void AddKiloButton_Click(object sender, RoutedEventArgs e)
         {
             int odo = int.Parse(OdoTB.Text);
-            int fill;
+       
 
-            fill = VehicleInfo.addKilometers(odo);
+            OdometerReading = VehicleInfo.addKilometersOdo(odo);
 
-            OdoTB.Text = fill.ToString();
+            OdoTB.Text = OdometerReading.ToString();
 
         }
 
         private void RecordServiceButton_Click(object sender, RoutedEventArgs e)
         {
             ServiceTB.Visibility = Visibility.Visible;
-            RecordButton.Visibility = Visibility.Visible;
+            RecordButton.Visibility = Visibility.Hidden;
+            RecordServiceButton.Visibility = Visibility.Visible;
         }
 
         private void RecordButton_Click(object sender, RoutedEventArgs e)
@@ -178,6 +180,25 @@ namespace TDD_ASS2
             LastServiceOdometerKM = VehicleInfo.recordService(service);
 
             ServiceBlock.Text = VehicleInfo.ServiceCount.ToString();
+            ServiceTB.Text = LastServiceOdometerKM.ToString();
+        }
+
+        private void RecordJourneyButton_Click(object sender, RoutedEventArgs e)
+        {
+            JourneyTB.Visibility = Visibility.Visible;
+            RecordJourneyButton.Visibility = Visibility.Hidden;
+            AddJourneyButton.Visibility = Visibility.Visible;
+
+        }
+
+        private void AddJourneyButton_Click(object sender, RoutedEventArgs e)
+        {
+            double journey = double.Parse(JourneyTB.Text);
+
+            Journey = VehicleInfo.addKilometersJourney(journey);
+
+            JourneyTB.Text = VehicleInfo.OdometerReading.ToString();
+
         }
     }
 }
