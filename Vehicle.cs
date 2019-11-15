@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,9 @@ namespace TDD_ASS2
 {
     public class Vehicle
     {
+        public static int SERVICE_KILOMETER_LIMIT = 10000;
+
+
         private int id;
         private string manufacturer;
         private string model;
@@ -25,7 +29,17 @@ namespace TDD_ASS2
         private decimal lastServiceOdometerKm;
         private int serviceCount;
 
+
+
         private FuelPurchase fuelPurchase;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
 
         public Vehicle()
         {
@@ -41,6 +55,7 @@ namespace TDD_ASS2
             journey = 0;
         }
 
+
         public int ID
         {
             get { return id; }
@@ -50,57 +65,119 @@ namespace TDD_ASS2
         public string Manufacturer
         {
             get { return manufacturer; }
-            set { manufacturer = value; }
+            set
+            {
+                if (this.manufacturer != value)
+                {
+                    this.manufacturer = value;
+                    this.NotifyPropertyChanged("Manufacturer");
+                }
+            }
         }
 
         public string Model
         {
             get { return model; }
-            set { model = value; }
+            set
+            {
+                if (this.model != value)
+                {
+                    this.model = value;
+                    this.NotifyPropertyChanged("Model");
+                }
+            }
         }
 
         public int MakeYear
         {
             get { return makeYear; }
-            set { makeYear = value; }
+            set
+            {
+                if (this.makeYear != value)
+                {
+                    this.makeYear = value;
+                    this.NotifyPropertyChanged("MakeYear");
+                }
+            }
         }
 
         public int RegistrationNum
         {
             get { return registrationNum; }
-            set { registrationNum = value; }
+            set
+            {
+                if (this.registrationNum != value)
+                {
+                    this.registrationNum = value;
+                    this.NotifyPropertyChanged("RegistrationNum");
+                }
+            }
         }
 
         public int OdometerReading
         {
             get { return odometerReading; }
-            set { odometerReading = value; }
+            set
+            {
+                if (this.odometerReading != value)
+                {
+                    this.odometerReading = value;
+                    this.NotifyPropertyChanged("OdometerReading");
+                }
+            }
         }
 
         public int TankCapacity
         {
             get { return tankCapacity; }
-            set { tankCapacity = value; }
+            set
+            {
+                if (this.tankCapacity != value)
+                {
+                    this.tankCapacity = value;
+                    this.NotifyPropertyChanged("TankCapacity");
+                }
+            }
         }
 
         public decimal LastServiceOdometerKm
         {
             get { return lastServiceOdometerKm; }
-            set { lastServiceOdometerKm = value; }
+            set
+            {
+                if (this.lastServiceOdometerKm != value)
+                {
+                    this.lastServiceOdometerKm = value;
+                    this.NotifyPropertyChanged("LastServiceOdometerKm");
+                }
+            }
         }
 
         public int ServiceCount
         {
             get { return serviceCount; }
-            set { serviceCount = value; }
+            set
+            {
+                if (this.serviceCount != value)
+                {
+                    this.serviceCount = value;
+                    this.NotifyPropertyChanged("ServiceCount");
+                }
+            }
         }
 
         public double Journey
         {
             get { return journey; }
-            set { journey = value; }
+            set
+            {
+                if (this.journey != value)
+                {
+                    this.journey = value;
+                    this.NotifyPropertyChanged("Journey");
+                }
+            }
         }
-
 
         /**
          * Class constructor specifying name of make (manufacturer), model and year
@@ -149,5 +226,6 @@ namespace TDD_ASS2
         {
             fuelPurchase.purchaseFuel(litres, price);
         }
+
     }
 }
