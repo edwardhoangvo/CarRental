@@ -22,6 +22,8 @@ namespace TDD_ASS2
         public Details()
         {
             InitializeComponent();
+            ServiceTB.Text = "0";
+            ButtonStatus = true;
         }
 
 
@@ -89,6 +91,12 @@ namespace TDD_ASS2
             get { return VehicleInfo.Journey; }
             set { VehicleInfo.Journey = value; }
         }
+        public bool ButtonStatus
+        {
+            get;
+            set;
+        }
+
 
 
 
@@ -96,33 +104,45 @@ namespace TDD_ASS2
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                int year = int.Parse(YearTB.Text);
+                int num = int.Parse(NumTB.Text);
+                int odo = int.Parse(OdoTB.Text);
+                int tank = int.Parse(TankTB.Text);
+                decimal service = decimal.Parse(ServiceTB.Text);
+                double jour = double.Parse(JourneyTB.Text);
 
-         
-            int year = int.Parse(YearTB.Text);
-            int num = int.Parse(NumTB.Text);
-            int odo = int.Parse(OdoTB.Text);
-            int tank = int.Parse(TankTB.Text);
-            decimal service = decimal.Parse(ServiceTB.Text);
-            double jour = double.Parse(JourneyTB.Text);
+                ID = 0;
+                Manufacturer = ManuTB.Text;
+                Model = ModelTB.Text;
+                MakeYear = year;
+                RegistrationNum = num;
+                OdometerReading = odo;
+                TankCapacity = tank;
 
-            ID = 0;
-            Manufacturer = ManuTB.Text;
-            Model = ModelTB.Text;
-            MakeYear = year;
-            RegistrationNum = num;
-            OdometerReading = odo;
-            TankCapacity = tank;
+                LastServiceOdometerKM = service;
 
-            LastServiceOdometerKM = service;            
+                Journey = jour;
 
-            Journey = jour;
+                this.Visibility = Visibility.Hidden;
 
-            this.Visibility = Visibility.Hidden;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Enter all the starred Items \n" + ex.Message);
+
+            }
+
+
         }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
+            ButtonStatus = false;
+
         }
     }
 }

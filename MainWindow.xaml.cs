@@ -70,25 +70,30 @@ namespace TDD_ASS2
             this.xVehicle = enterDetails.VehicleInfo;
 
             enterDetails.Close();
-
-            vehicles.Add(new Vehicle() {
-                ID = vehicleCount,
-                Manufacturer = xVehicle.Manufacturer,
-                Model = xVehicle.Model,
-                MakeYear = xVehicle.MakeYear,
-                RegistrationNum = xVehicle.RegistrationNum,
-                OdometerReading = xVehicle.OdometerReading,
-                TankCapacity = xVehicle.TankCapacity,
-                LastServiceOdometerKm = xVehicle.LastServiceOdometerKm,
-                ServiceCount = xVehicle.ServiceCount,
-                Journey = xVehicle.Journey
+          
+            if (enterDetails.ButtonStatus == true)
+            {
+                vehicles.Add(new Vehicle()
+                {
+                    ID = vehicleCount,
+                    Manufacturer = xVehicle.Manufacturer,
+                    Model = xVehicle.Model,
+                    MakeYear = xVehicle.MakeYear,
+                    RegistrationNum = xVehicle.RegistrationNum,
+                    OdometerReading = xVehicle.OdometerReading,
+                    TankCapacity = xVehicle.TankCapacity,
+                    LastServiceOdometerKm = xVehicle.LastServiceOdometerKm,
+                    ServiceCount = xVehicle.ServiceCount,
+                    Journey = xVehicle.Journey
                 });
 
 
-            vehicleCount++;
+                vehicleCount++;
+            }
 
             VehicleList.ItemsSource = vehicles;
-         
+
+
         }
 
         public void RemoveItem(ObservableCollection<Vehicle> collection, Vehicle instance)
@@ -106,6 +111,8 @@ namespace TDD_ASS2
 
         private void EdditButton_Click(object sender, RoutedEventArgs e)
         {
+
+            
             ViewDetails details = new ViewDetails();
 
             int selectedItemIndex = VehicleList.SelectedIndex;
@@ -135,27 +142,6 @@ namespace TDD_ASS2
 
                 }
             }
-
-            //foreach (Vehicle eachItem in VehicleList.SelectedItems)
-            //{
-            //    VehicleList.Items.Remove(eachItem);
-            //}
-
-
-
-            //vehicles.Add(new Vehicle()
-            //{
-            //    //ID = vehicleCount,
-            //    Manufacturer = updatedVehicle.Manufacturer,
-            //    Model = updatedVehicle.Model,
-            //    MakeYear = updatedVehicle.MakeYear,
-            //    RegistrationNum = updatedVehicle.RegistrationNum,
-            //    OdometerReading = updatedVehicle.OdometerReading,
-            //    TankCapacity = updatedVehicle.TankCapacity,
-            //    LastServiceOdometerKm = updatedVehicle.LastServiceOdometerKm,
-            //    ServiceCount = updatedVehicle.ServiceCount,
-            //    Journey = updatedVehicle.Journey
-            //});
 
             VehicleList.ItemsSource = vehicles;
 
