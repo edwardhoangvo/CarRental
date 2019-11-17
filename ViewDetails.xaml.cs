@@ -93,6 +93,7 @@ namespace TDD_ASS2
 
         private void ViewDetailsWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            // Get data from MainWindow
             ManuTB.Text = VehicleInfo.Manufacturer;
             ModelTB.Text = VehicleInfo.Model;
             YearTB.Text = VehicleInfo.MakeYear.ToString();
@@ -111,13 +112,15 @@ namespace TDD_ASS2
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            // Convert String to suitable types
             int year = int.Parse(YearTB.Text);
             int num = int.Parse(NumTB.Text);
             int odo = int.Parse(OdoTB.Text);
             int tank = int.Parse(TankTB.Text);
             decimal service = decimal.Parse(ServiceTB.Text);
             double jour = double.Parse(JourneyTB.Text);
-
+            
+            // Get data from GUI
             ID = 0;
             Manufacturer = ManuTB.Text;
             Model = ModelTB.Text;
