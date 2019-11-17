@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace TDD_ASS2
 {
+    // Create class with INotifyPropertyChanged to update ObservableCollection on edit 
     public class Vehicle : INotifyPropertyChanged
     {
         public static int SERVICE_KILOMETER_LIMIT = 10000;
 
-
+        // Initialise variables
         private int id;
         private string manufacturer;
         private string model;
